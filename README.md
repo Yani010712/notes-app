@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# README
+## Notes App 
+Rails App with HTTP API endpoints performing CRUD operations.
 
-Things you may want to cover:
+## Set up & Running
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+1. git clone https://github.com/Yani010712/notes-app.git
+2. cd notes-app
+3. bundler install
+4. rails db:migrate
+5. rails db:seed
+6. rails s
+```
+``` Ruby
+  Ruby 2.6.3
+  Rails 6.0.2.1
+```

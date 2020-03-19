@@ -1,12 +1,12 @@
 class NotesController < ApplicationController
-    protect_from_forgery except: [:index, :show, :create, :edit, :update, :destroy]
+    protect_from_forgery except: [:index, :show, :create, :update, :destroy]
+    before_action :current_note, only: [:show, :update, :destroy]
 
     def index
         @notes = Note.all
     end
 
     def show
-        @note = Note.find(params[:id])
     end
  
     def create
@@ -18,7 +18,6 @@ class NotesController < ApplicationController
      end
 
      def update
-        @note = Note.find(params[:id])
         @note.update(note: note_params["note"])
         redirect_to :action => 'show', :id => @note 
      end
@@ -26,7 +25,7 @@ class NotesController < ApplicationController
      
 
      def destroy
-        @note = Note.find(params[:id]).destroy
+        @note.destroy
         redirect_to :action => 'index'
 
      end
@@ -35,4 +34,8 @@ class NotesController < ApplicationController
         def note_params
             params.permit(:note)
         end
+
+        def current_note
+            @note = Note.find(params[:id])
+          end
 end

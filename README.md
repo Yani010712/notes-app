@@ -1,6 +1,4 @@
 # README
-
-# README
 ## Notes App 
 Rails App with HTTP API endpoints performing CRUD operations.
 
